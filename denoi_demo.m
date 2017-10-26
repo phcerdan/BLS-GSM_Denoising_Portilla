@@ -3,10 +3,10 @@
 % Last time modified: 14/5/2004
 
 % Load original image
-input_folder = '/home/phc/repository_local/FFT-from-image-compute-radial-intensity/INPUT/carNa_tiles_original/'
+input_folder = '/home/phc/repository_local/FFT-from-image-compute-radial-intensity/INPUT/carK_tiles_original/carK_Montage833_2x2/'
 % input_folder = '/home/phc/repository_local/saxstem_compute/output_saxstem/inputs/pectin/tiles_original/'
-files = dir( strcat(input_folder, 'carNa_Montage851_3x3_tiles_*.tif') )
-output_folder = '/home/phc/repository_local/saxstem_compute/blsgsm_portilla/carNa';
+files = dir( strcat(input_folder, 'Montage833_2x2_tiles_*.tif') )
+output_folder = '/home/phc/repository_local/saxstem_compute/blsgsm_portilla/carK';
 disp(['output_folder: ', output_folder]);
 % TODO deleteme (avoid recalculation of first)
 % files = files(2:end,1);
@@ -33,7 +33,7 @@ im0 = double(im0);  % convert it to double
 
 % Noise Parameters (assumed additive, Gaussian and independent of the
 % original image)
-sig = 15.0;		        % standard deviation
+sig = 17.0;		        % standard deviation
 PS = ones(size(im0));	% power spectral density (in this case, flat, i.e., white noise)
 seed = 0;               % random seed
 
