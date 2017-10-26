@@ -3,10 +3,10 @@
 % Last time modified: 14/5/2004
 
 % Load original image
-input_folder = '/home/phc/repository_local/FFT-from-image-compute-radial-intensity/INPUT/pectin_tiles_original/'
+input_folder = '/home/phc/repository_local/FFT-from-image-compute-radial-intensity/INPUT/carNa_tiles_original/'
 % input_folder = '/home/phc/repository_local/saxstem_compute/output_saxstem/inputs/pectin/tiles_original/'
-files = dir( strcat(input_folder, 'pectin_1_ice_Montage_1045_12K_8_bit_tiles_*.tif') )
-output_folder = '/home/phc/repository_local/saxstem_compute/blsgsm_portilla/pectin';
+files = dir( strcat(input_folder, 'carNa_Montage851_3x3_tiles_*.tif') )
+output_folder = '/home/phc/repository_local/saxstem_compute/blsgsm_portilla/carNa';
 disp(['output_folder: ', output_folder]);
 % TODO deleteme (avoid recalculation of first)
 % files = files(2:end,1);
@@ -33,7 +33,7 @@ im0 = double(im0);  % convert it to double
 
 % Noise Parameters (assumed additive, Gaussian and independent of the
 % original image)
-sig = 28.4;		        % standard deviation
+sig = 15.0;		        % standard deviation
 PS = ones(size(im0));	% power spectral density (in this case, flat, i.e., white noise)
 seed = 0;               % random seed
 
@@ -87,7 +87,7 @@ tic; im_d = denoi_BLS_GSM(im0, sig, PS, blSize, parent, boundary, Nsc, Nor, cova
 % showIm(im_d,rang);title(['Denoised Image, ISNR = ', num2str(ISNR),'dB'])
 %showIm(im_d);title(['Denoised Image'])
 [folder, filename, ext] = fileparts(imgPath)
-outputPath = fullfile(output_folder, [filename , 'Portilla', 'Sigma', num2str(sig), 'FullSteerable.tiff'])
+outputPath = fullfile(output_folder, [filename , 'Portilla', 'Sigma', num2str(sig), 'UWdaub1_nor3_L8.tiff'])
 % imwrite(im_d,outputPath)
 
 t = Tiff(outputPath,'w');
