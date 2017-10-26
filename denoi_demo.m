@@ -3,18 +3,20 @@
 % Last time modified: 14/5/2004
 
 % Load original image
-input_folder = '/home/phc/repository_local/FFT-from-image-compute-radial-intensity/INPUT/pectin_tiles_original/'
-files = dir( strcat(input_folder, 'pectin_1_ice_Montage_1045_12K_8_bit_tiles_*.tif') );
+% input_folder = '/home/phc/repository_local/FFT-from-image-compute-radial-intensity/INPUT/pectin_tiles_original/'
+input_folder = '/home/phc/repository_local/saxstem_compute/output_saxstem/inputs/pectin/tiles_original/'
+files = dir( strcat(input_folder, 'pectin_1_ice_Montage_1045_12K_8_bit_tiles_*.tif') )
 output_folder = '/home/phc/repository_local/saxstem_compute/blsgsm_portilla/pectin';
 disp(['output_folder: ', output_folder]);
 % TODO deleteme (avoid recalculation of first)
-files = files(2:end,1);
+% files = files(2:end,1);
 file_count = 0;
 for file = files'
     clearvars -except file files output_folder file_count input_folder
     disp([num2str(file_count), ': ' , file.name]);
     file_count=file_count + 1;
     imgPath = strcat(input_folder, file.name);
+    % continue;
 % imgPath = '/home/phc/repository_local/wavelet_held/blsgsm_v1.0/output/Montage_832_negated256x256_x200y200.png'
 %imgPath = '/home/phc/repository_local/wavelet_held/blsgsm_v1.0/output/Montage_832_negated.png'
 %imgPath = '/home/phc/repository_local/wavelet_held/blsgsm_v1.0/output_saxstem/inputs/pectin_tiles/pectin_1_ice_Montage_1045_12K_8_bit_tiles_00.tif'
