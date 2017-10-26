@@ -3,8 +3,8 @@
 % Last time modified: 14/5/2004
 
 % Load original image
-% input_folder = '/home/phc/repository_local/FFT-from-image-compute-radial-intensity/INPUT/pectin_tiles_original/'
-input_folder = '/home/phc/repository_local/saxstem_compute/output_saxstem/inputs/pectin/tiles_original/'
+input_folder = '/home/phc/repository_local/FFT-from-image-compute-radial-intensity/INPUT/pectin_tiles_original/'
+% input_folder = '/home/phc/repository_local/saxstem_compute/output_saxstem/inputs/pectin/tiles_original/'
 files = dir( strcat(input_folder, 'pectin_1_ice_Montage_1045_12K_8_bit_tiles_*.tif') )
 output_folder = '/home/phc/repository_local/saxstem_compute/blsgsm_portilla/pectin';
 disp(['output_folder: ', output_folder]);

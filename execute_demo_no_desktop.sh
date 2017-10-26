@@ -1,4 +1,5 @@
 #!/bin/bash
+# export PATH="/usr/local/MATLAB/R2013a/bin:$PATH"
 matlab -nodisplay -nojvm -nosplash -nodesktop -r \
       "addpath(genpath('/home/phc/repository_local/BLS-GSM_Denoising_Portilla')),try, run('/home/phc/repository_local/BLS-GSM_Denoising_Portilla/denoi_demo.m'), catch me, fprintf('%s / %s\n',me.identifier,me.message), end, exit(0);"
 echo "matlab exit code: $?"
